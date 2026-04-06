@@ -20,7 +20,7 @@ export default function Contact() {
   const submit = async e => {
     e.preventDefault(); setLoading(true)
     try {
-      await axios.post('/api/contact', form)
+      await axios.post('https://company-0bf4.onrender.com/api/contact', form)
       setStatus('ok')
       setForm({ name: '', email: '', phone: '', service: '', budget: '', message: '' })
     } catch { setStatus('err') }
