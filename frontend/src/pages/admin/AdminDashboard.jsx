@@ -23,9 +23,9 @@ export default function AdminDashboard() {
   const fetchAll = async () => {
     try {
       const [c, s, p] = await Promise.all([
-        axios.get('/api/contact'),
-        axios.get('/api/newsletter'),
-        axios.get('/api/blog'),
+        axios.get('https://company-0bf4.onrender.com/api/contact'),
+        axios.get('https://company-0bf4.onrender.com/api/newsletter'),
+        axios.get('https://company-0bf4.onrender.com/api/blog'),
       ])
       setContacts(c.data || [])
       setSubs(s.data || [])
