@@ -20,7 +20,7 @@ export default function Blog() {
   const [cat,   setCat]   = useState('All')
 
   useEffect(() => {
-    axios.get('/api/blog')
+    axios.get('https://company-0bf4.onrender.com/api/blog')
       .then(r => { if (r.data?.length) setPosts(r.data) })
       .catch(() => {})
   }, [])
