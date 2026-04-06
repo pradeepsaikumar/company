@@ -19,7 +19,7 @@ export default function Footer() {
   const subscribe = async (e) => {
     e.preventDefault()
     try {
-      await axios.post('/api/newsletter/subscribe', { email })
+      await axios.post('https://company-0bf4.onrender.com/api/newsletter/subscribe', { email })
       setStatus('ok'); setEmail('')
     } catch { setStatus('err') }
   }
