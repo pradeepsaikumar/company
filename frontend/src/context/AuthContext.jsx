@@ -10,7 +10,7 @@ export function AuthProvider({ children }) {
     setLoading(false)
   }, [])
   const login = async (email, password) => {
-    const res = await axios.post('/api/auth/login', { email, password })
+    const res = await axios.post('https://company-0bf4.onrender.com/api/auth/login', { email, password })
     const { token } = res.data
     localStorage.setItem('dr_token', token)
     axios.defaults.headers.common['Authorization'] = `Bearer ${token}`
