@@ -40,9 +40,9 @@ export default function AdminDashboard() {
       const slug = pf.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')
       const readTime = Math.ceil(pf.content.split(' ').length / 200) + ' min read'
       if (editPost) {
-        await axios.put(`/api/blog/${editPost._id}`, { ...pf, slug, readTime })
+        await axios.put(`https://company-0bf4.onrender.com/api/blog/${editPost._id}`, { ...pf, slug, readTime })
       } else {
-        await axios.post('/api/blog', { ...pf, slug, readTime, date: new Date() })
+        await axios.post('https://company-0bf4.onrender.com/api/blog', { ...pf, slug, readTime, date: new Date() })
       }
       setShowForm(false)
       setEditPost(null)
@@ -65,7 +65,7 @@ export default function AdminDashboard() {
   }
 
   const markRead = async (id) => {
-    try { await axios.patch(`/api/contact/${id}/read`); fetchAll() } catch {}
+    try { await axios.patch(`https://company-0bf4.onrender.com/api/contact/${id}/read`); fetchAll() } catch {}
   }
 
   const inp = {
