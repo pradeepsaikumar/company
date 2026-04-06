@@ -3,8 +3,16 @@ import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
+  base: '/',   // ✅ IMPORTANT FIX
+
   plugins: [react(), tailwindcss()],
+
   server: {
-    proxy: { '/api': { target: 'https://company-0bf4.onrender.com', changeOrigin: true } }
+    proxy: {
+      '/api': {
+        target: 'http://localhost:5000', // 👉 only local dev kosam
+        changeOrigin: true
+      }
+    }
   }
 })
